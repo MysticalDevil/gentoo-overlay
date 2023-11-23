@@ -7,7 +7,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
 
-inherit cargo git-r3 python-single-r1 desktop
+inherit cargo git-r3 python-single-r1 desktop ninja-utils
 
 DESCRIPTION="Neovide: No Nonsense Neovim Gui"
 HOMEPAGE="https://neovide.dev"
@@ -18,7 +18,7 @@ EGIT_REPO_URI="https://github.com/neovide/neovide.git"
 LICENSE="0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 Boost-1.0 ISC LGPL-3 MIT MPL-2.0 Unicode-DFS-2016 Unlicense ZLIB"
 SLOT="0"
 IUSE="+X wayland"
-RESTRICT="network-sandbox"
+RESTRICT="fetch & mirror & network-sandbox"
 PROPERTIES="live"
 
 REQUIRED_USE="
@@ -71,7 +71,6 @@ src_install() {
 	cargo_src_install
 
 	domenu assets/neovide.desktop
-	newicon assets/neovide.svg
 }
 
 src_test() {
