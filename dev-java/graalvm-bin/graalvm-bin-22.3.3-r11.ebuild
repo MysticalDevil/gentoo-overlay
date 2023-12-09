@@ -12,7 +12,7 @@ SLOT=${JVM_VER}
 SRC_URI="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${PV}/graalvm-ce-java${JVM_VER}-linux-amd64-${PV}.tar.gz
 native-image? ( https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${PV}/native-image-installable-svm-java${JVM_VER}-linux-amd64-${PV}.jar )"
 
-DESCRIPTION="GraalVM prebuild binaries"
+DESCRIPTION="GraalVM is a high-performance JDK designed to accelerate Java application performance while consuming fewer resources"
 HOMEPAGE="https://www.graalvm.org/"
 LICENSE="GPL-2-with-classpath-exception"
 KEYWORDS="~amd64"
