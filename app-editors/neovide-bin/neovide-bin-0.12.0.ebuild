@@ -6,7 +6,7 @@ EAPI=8
 DESCRIPTION="Neovide: No Nonsense Neovim Gui"
 HOMEPAGE="https://neovide.dev"
 SRC_URI="https://github.com/neovide/neovide/releases/download/${PV}/neovide-linux-x86_64.tar.gz -> ${P}.tar.gz"
-RESTRICT="fetch"
+RESTRICT="mirror"
 
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
