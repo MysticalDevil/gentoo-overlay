@@ -1,0 +1,14 @@
+[Unit]
+Description=Spacedrive deamon (sd-daemon)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sd-daemon
+Restart=on-failure
+RestartSec=2
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
