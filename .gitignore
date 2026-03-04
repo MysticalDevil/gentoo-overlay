@@ -2,3 +2,5 @@ distfiles/
 packages/
 *.orig
 *.rej
+AGENTS.md
+AGETNS.md
