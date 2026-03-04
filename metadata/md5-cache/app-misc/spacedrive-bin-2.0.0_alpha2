@@ -1,0 +1,15 @@
+BDEPEND=sys-devel/binutils app-arch/tar app-arch/xz-utils app-arch/zstd app-arch/gzip app-arch/bzip2 sys-apps/file
+DEFINED_PHASES=compile install postinst postrm preinst unpack
+DESCRIPTION=Spacedrive v2 desktop app (binary release from GitHub)
+EAPI=8
+HOMEPAGE=https://github.com/spacedriveapp/spacedrive
+IDEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
+INHERIT=xdg
+KEYWORDS=~amd64
+LICENSE=AGPL-3
+RDEPEND=media-libs/libheif net-libs/webkit-gtk:4.1 dev-libs/libayatana-appindicator
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/spacedriveapp/spacedrive/releases/download/v2.0.0-alpha.2/Spacedrive-linux-x86_64.deb -> spacedrive-bin-2.0.0_alpha2-linux-x86_64.deb
+_eclasses_=xdg-utils	42869b3c8d86a70ef3cf75165a395e09	xdg	3ef49a87c52c8b77c476351195dfe575
+_md5_=b2d3c4a0723268a3fa85659bcd35562d

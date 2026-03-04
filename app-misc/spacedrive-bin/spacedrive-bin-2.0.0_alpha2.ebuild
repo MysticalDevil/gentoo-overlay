@@ -5,8 +5,8 @@ inherit xdg
 DESCRIPTION="Spacedrive v2 desktop app (binary release from GitHub)"
 HOMEPAGE="https://github.com/spacedriveapp/spacedrive"
 
-# Gentoo PV: 2.0.0_alpha1
-# Upstream tag: v2.0.0-alpha.1
+# Gentoo PV: 2.0.0_alpha2
+# Upstream tag: v2.0.0-alpha.2
 MY_TAG="v${PV/_alpha/-alpha.}"
 
 SRC_URI="
@@ -98,4 +98,3 @@ pkg_postinst() {
 pkg_postrm() {
 	xdg_pkg_postrm
 }
-

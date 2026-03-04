@@ -62,8 +62,9 @@ src_install() {
 	[[ -x "${ED}${exe}" ]] || exe="${install_dir}/${PN}"
 	dosym "${exe}" "/usr/bin/${PN}"
 
-	# Do NOT install tray icon as app icon.
-	# Rely on the system icon theme providing "jetbrains-toolbox" (e.g. Papirus), via Icon=jetbrains-toolbox.
+	# Upstream tarball only ships a 32x32 PNG icon; install it explicitly so
+	# desktop environments can resolve Icon=jetbrains-toolbox reliably.
+	newicon -s 32 "${S}/bin/toolbox-tray-color.png" "${PN}.png"
 	make_desktop_entry "/usr/bin/${PN}" "JetBrains Toolbox" "${PN}" "Development;IDE;"
 }
 
