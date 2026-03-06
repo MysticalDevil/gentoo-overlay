@@ -13,7 +13,7 @@ SRC_URI="
 	arm64? ( https://download.jetbrains.com/toolbox/${P}-arm64.tar.gz )
 "
 
-LICENSE="JetBrains"
+LICENSE="|| ( JetBrains-business JetBrains-classroom JetBrains-educational JetBrains-individual )"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror strip bindist"
@@ -21,7 +21,7 @@ RESTRICT="mirror strip bindist"
 RDEPEND="
 	sys-fs/fuse:0
 	sys-libs/glibc
-	sys-libs/zlib
+	virtual/zlib
 	x11-libs/libXi
 	x11-libs/libXrender
 	x11-libs/libXtst
@@ -30,8 +30,6 @@ RDEPEND="
 	x11-libs/gtk+:3
 	dev-libs/nss
 "
-DEPEND=""
-BDEPEND=""
 
 QA_PREBUILT="opt/${P}/*"
 
