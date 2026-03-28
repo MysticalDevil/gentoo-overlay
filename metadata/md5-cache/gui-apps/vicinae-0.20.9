@@ -1,0 +1,15 @@
+BDEPEND=dev-build/cmake dev-libs/qtkeychain sci-libs/libqalculate !abi_x86_x32? ( net-libs/nodejs[npm] ) dev-qt/qtbase dev-libs/qtkeychain dev-cpp/rapidfuzz-cpp sys-libs/minizip-ng kde-plasma/layer-shell-qt dev-qt/qtsvg dev-build/ninja >=sys-devel/gcc-15 virtual/minizip >=dev-cpp/glaze-6 app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+DEFINED_PHASES=compile configure install prepare pretend test unpack
+DEPEND=dev-libs/protobuf
+DESCRIPTION=A focused launcher for your desktop - native, fast, extensible
+EAPI=8
+HOMEPAGE=https://github.com/vicinaehq/vicinae
+INHERIT=cmake desktop systemd unpacker
+IUSE=abi_x86_x32 +typescript-extensions lto static
+KEYWORDS=-* ~amd64
+LICENSE=GPL-3
+RDEPEND=dev-libs/protobuf
+SLOT=0
+SRC_URI=https://github.com/vicinaehq/vicinae/archive/v0.20.9.tar.gz -> vicinae-0.20.9.tar.gz
+_eclasses_=toolchain-funcs	5195689ff6a73b0e789acfa09d4fbcb9	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	d4511f019dc17ec44bfe46b9e672ca64	ninja-utils	d063ea1900a793f93eb095010d6d9156	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	3395ce6618fc5c7af03335471b896644	desktop	26d57169ca094c04be416993844ec8bc	systemd	a964c0cbe818b5729da1dbfcee5be861	eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	unpacker	a89c769f7dcf68bd2a6d23da9ede2ad2
+_md5_=68a009a5d6e8313a1872f45c16dde493
