@@ -15,12 +15,12 @@ SRC_URI="
 
 LICENSE="|| ( JetBrains-business JetBrains-classroom JetBrains-educational JetBrains-individual )"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="mirror strip bindist"
 
 RDEPEND="
 	sys-fs/fuse:0
-	sys-libs/glibc
+	elibc_glibc? ( sys-libs/glibc )
 	virtual/zlib
 	x11-libs/libXi
 	x11-libs/libXrender
@@ -32,6 +32,10 @@ RDEPEND="
 "
 
 QA_PREBUILT="opt/${P}/*"
+
+pkg_pretend() {
+	use elibc_glibc || die "${PN} requires glibc"
+}
 
 src_unpack() {
 	default
