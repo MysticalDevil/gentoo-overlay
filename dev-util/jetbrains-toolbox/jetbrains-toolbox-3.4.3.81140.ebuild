@@ -20,7 +20,7 @@ RESTRICT="mirror strip bindist"
 
 RDEPEND="
 	sys-fs/fuse:0
-	elibc_glibc? ( sys-libs/glibc )
+	sys-libs/glibc
 	virtual/zlib
 	x11-libs/libXi
 	x11-libs/libXrender
@@ -34,7 +34,7 @@ RDEPEND="
 QA_PREBUILT="opt/${P}/*"
 
 pkg_pretend() {
-	use elibc_glibc || die "${PN} requires glibc"
+	use elibc_glibc || ewarn "${PN} requires glibc"
 }
 
 src_unpack() {
