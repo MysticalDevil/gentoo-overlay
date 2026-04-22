@@ -4,7 +4,7 @@
 EAPI=8
 inherit cmake desktop systemd unpacker
 
-VERSION_GIT_HASH="c2717ba5f8373ed4bae658b42fbe3e146b172f61"
+VERSION_GIT_HASH="c0171f85309710db1004a09c1fe98c5e25440cda"
 
 DESCRIPTION="A focused launcher for your desktop - native, fast, extensible"
 HOMEPAGE="https://github.com/vicinaehq/vicinae"
