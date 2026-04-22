@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="debug">Build with debug extensions enabled.</flag>
+		<flag name="llvm">Build with LLVM backend and extensions enabled.</flag>
+	</use>
+	<upstream>
+		<remote-id type="codeberg">ziglang/zig</remote-id>
+	</upstream>
+</pkgmetadata>

@@ -34,7 +34,7 @@ RDEPEND="
 QA_PREBUILT="opt/${P}/*"
 
 pkg_pretend() {
-	use elibc_glibc || ewarn "${PN} requires glibc"
+	use elibc_glibc || die "${PN} requires glibc"
 }
 
 src_unpack() {
