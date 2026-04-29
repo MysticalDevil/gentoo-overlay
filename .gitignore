@@ -1,5 +1,7 @@
 distfiles/
 packages/
+.codex
+*.log
 *.orig
 *.rej
 AGENTS.md
