@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst prepare test
+DEPEND=>=app-eselect/eselect-lua-3 readline? ( sys-libs/readline:= ) !dev-lang/lua:0
+DESCRIPTION=A powerful light-weight programming language designed for extending applications
+EAPI=8
+HOMEPAGE=https://www.lua.org/
+INHERIT=optfeature toolchain-funcs
+IUSE=+deprecated readline
+KEYWORDS=~amd64 ~arm64
+LICENSE=MIT
+RDEPEND=>=app-eselect/eselect-lua-3 readline? ( sys-libs/readline:= ) !dev-lang/lua:0
+SLOT=5.5
+SRC_URI=https://www.lua.org/ftp/lua-5.5.0.tar.gz
+_eclasses_=optfeature	538bce96e5589935b57e178e8635f301	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5
+_md5_=eb691928efa0f84778c4477bf5a30276
