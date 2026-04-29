@@ -19,8 +19,8 @@ KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="mirror strip bindist"
 
 RDEPEND="
+	elibc_glibc? ( sys-libs/glibc )
 	sys-fs/fuse:0
-	sys-libs/glibc
 	virtual/zlib
 	x11-libs/libXi
 	x11-libs/libXrender
@@ -66,7 +66,14 @@ src_install() {
 
 	# Prefer icon theme-provided "jetbrains-toolbox" icon (e.g. Papirus).
 	# Do not install a bundled fallback icon here.
-	make_desktop_entry "/usr/bin/${PN}" "JetBrains Toolbox" "${PN}" "Development;IDE;"
+	cp "${S}/bin/${PN}.desktop" "${T}/${PN}.desktop" || die
+	sed -i \
+		-e "s|^Exec=.*|Exec=/usr/bin/${PN}|" \
+		-e "s|^Icon=.*|Icon=${PN}|" \
+		-e "/^StartupWMClass=/d" \
+		-e "/^Icon=/a StartupWMClass=${PN}" \
+		"${T}/${PN}.desktop" || die
+	domenu "${T}/${PN}.desktop"
 }
 
 pkg_postinst() {
@@ -77,6 +84,11 @@ pkg_postinst() {
 	elog ""
 	elog "On first run, it may install a user-level copy under ~/.local/share/JetBrains/Toolbox"
 	elog "and manage autostart configuration."
+	elog ""
+	elog "The system desktop entry uses Icon=${PN}, which is provided by Papirus."
+	elog "If Toolbox previously generated a user desktop file with Icon=toolbox,"
+	elog "remove ~/.local/share/applications/${PN}.desktop and"
+	elog "~/.local/share/icons/hicolor/scalable/apps/toolbox.svg to let Papirus win."
 	elog ""
 	elog "If you encounter launch issues under Hyprland (e.g. AppImage mount failures),"
 	elog "make sure your user can access the FUSE device, and that sys-fs/fuse is properly loaded."
