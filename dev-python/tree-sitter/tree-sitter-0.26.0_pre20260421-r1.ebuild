@@ -26,7 +26,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-DEPEND=">=dev-libs/tree-sitter-0.26.0:="
+DEPEND="=dev-libs/tree-sitter-0.26*:="
 RDEPEND="${DEPEND}
 	$(python_gen_cond_dep '
 		dev-python/setuptools[${PYTHON_USEDEP}]
@@ -35,10 +35,10 @@ RDEPEND="${DEPEND}
 BDEPEND="
 	test? (
 		>=dev-libs/tree-sitter-html-0.23.2[python,${PYTHON_USEDEP}]
-		>=dev-libs/tree-sitter-javascript-0.23.1[python,${PYTHON_USEDEP}]
+		>=dev-libs/tree-sitter-javascript-0.25.0[python,${PYTHON_USEDEP}]
 		>=dev-libs/tree-sitter-json-0.24.8[python,${PYTHON_USEDEP}]
-		>=dev-libs/tree-sitter-python-0.23.6[python,${PYTHON_USEDEP}]
-		>=dev-libs/tree-sitter-rust-0.23.2[python,${PYTHON_USEDEP}]
+		>=dev-libs/tree-sitter-python-0.25.0[python,${PYTHON_USEDEP}]
+		>=dev-libs/tree-sitter-rust-0.24.0[python,${PYTHON_USEDEP}]
 	)
 "
 
